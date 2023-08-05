@@ -17,12 +17,12 @@ export class FormBase {
 
     constructor() {
         this.eventManager = new EventManager();
-        // this.eventManager.initEvents();
+        this.eventManager.initEvents();
 
     }
 
     static get FormContext() {
-
+        alert("kikoo");
         return FormBase.context.getFormContext();
     }
 
