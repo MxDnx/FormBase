@@ -2,9 +2,6 @@ import { FormBase } from "../formBase";
 import { EventManager } from "../event-management/eventManager";
 import { LogManager } from "../log-management/logManager";
 
-
-
-
 export function onLoad(target: any, propertyKey: string, descriptor: PropertyDescriptor) {
 
     const originalMethod = descriptor.value;
