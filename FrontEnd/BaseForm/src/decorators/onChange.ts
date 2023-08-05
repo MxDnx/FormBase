@@ -8,17 +8,17 @@ export function onChange(attributeName: string) {
 
         const originalMethod = descriptor.value;
 
-        descriptor.value = function (context: Xrm.Events.EventContext) {
+        descriptor.value = function (...args: any[]) {
 
-            LogManager.logInfo(`Start OnLoad Event function '${propertyKey}'`);
-
+            LogManager.logInfo(`Start OnChange Event function '${propertyKey}'`);
+            let context = args[0];
             if (context === null) {
-                throw Error("Please Provide the context")
+                throw Error("Please OnChange the context")
             }
+            let form: FormBase = target;
+            form.context = context;
 
-            FormBase.context = context;
-
-            const result = originalMethod.apply(this, context);
+            const result = originalMethod.apply(this, ...args);
 
             LogManager.logInfo(`End OnLoad Event function '${propertyKey}'`);
 

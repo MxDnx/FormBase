@@ -7,36 +7,19 @@ import { EventManager } from "./event-management/eventManager";
 export class FormBase {
 
     static appName: string = "[BaseForm]";
-    static context: Xrm.Events.EventContext;
+    context!: Xrm.Events.EventContext;
     private eventManager: EventManager;
-
-    @crmValue("firstname")
-    firstname!: Xrm.Attributes.Attribute<string>;
-    @crmValue("lastname")
-    lastname!: Xrm.Attributes.Attribute<string>;
 
     constructor() {
         this.eventManager = new EventManager();
-
-
     }
 
-    static get FormContext() {
-        return FormBase.context.getFormContext();
+    get FormContext() {
+        return this.context.getFormContext();
     }
 
     @onLoad
-    public initForm() {
-        this.eventManager.initEvents();
+    public initForm(context: Xrm.Events.EventContext) {
+        this.eventManager.initEvents(context.getFormContext());
     }
-
-    @onChange("lastname")
-    public lastNameOnChange() {
-
-    }
-
-
 }
-
-let b = new FormBase();
-b.initForm();

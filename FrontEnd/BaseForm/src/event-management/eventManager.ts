@@ -13,29 +13,27 @@ export class EventManager {
 
     }
 
-    public initEvents() {
+    public initEvents(formContext: Xrm.FormContext) {
 
         LogManager.logInfo("Load OnChange Events");
         EventManager.onChangeEvents.forEach(onChangeEvent => {
-            FormBase.FormContext.getAttribute(onChangeEvent.attributeName).addOnChange(onChangeEvent.callback);
+            formContext.getAttribute(onChangeEvent.attributeName).addOnChange(onChangeEvent.callback);
         });
 
         LogManager.logInfo("Load OnSave Events");
         EventManager.onSaveEvents.forEach(onSaveEvent => {
-            FormBase.FormContext.data.entity.addOnSave(onSaveEvent);
+            formContext.data.entity.addOnSave(onSaveEvent);
         });
 
         LogManager.logInfo("Load OnPostSave Events");
         EventManager.onPostSaveEvents.forEach(onPostSaveEvent => {
-            FormBase.FormContext.data.entity.addOnPostSave(onPostSaveEvent);
+            formContext.data.entity.addOnPostSave(onPostSaveEvent);
         });
 
         LogManager.logInfo("Load OnChange Events");
         EventManager.onLoadEvents.forEach(onLoadEvent => {
-            FormBase.FormContext.data.addOnLoad(onLoadEvent)
+            formContext.data.addOnLoad(onLoadEvent)
         });
-
-
     }
 }
 
