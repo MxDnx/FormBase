@@ -17,18 +17,17 @@ export class FormBase {
 
     constructor() {
         this.eventManager = new EventManager();
-        this.eventManager.initEvents();
+
 
     }
 
     static get FormContext() {
-        alert("kikoo");
         return FormBase.context.getFormContext();
     }
 
     @onLoad
     public initForm() {
-
+        this.eventManager.initEvents();
     }
 
     @onChange("lastname")
