@@ -12,7 +12,7 @@ export class EventManager {
     constructor() {
 
     }
-    
+
     public initEvents() {
 
         LogManager.logInfo("Load OnChange Events");
