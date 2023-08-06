@@ -1,19 +1,21 @@
 import { LogManager } from "../log-management/logManager";
 
-export function startStop(target: any, propertyKey: string, descriptor: PropertyDescriptor) {
+module mx {
+    export function startStop(target: any, propertyKey: string, descriptor: PropertyDescriptor) {
 
-    const originalMethod = descriptor.value;
+        const originalMethod = descriptor.value;
 
-    descriptor.value = function (...args: any[]) {
+        descriptor.value = function (...args: any[]) {
 
-        LogManager.logInfo(`Start function '${propertyKey}'`);
+            LogManager.logInfo(`Start function '${propertyKey}'`);
 
-        const result = originalMethod.apply(this, args);
+            const result = originalMethod.apply(this, args);
 
-        LogManager.logInfo(`End function '${propertyKey}'`);
+            LogManager.logInfo(`End function '${propertyKey}'`);
 
-        return result;
-    };
+            return result;
+        };
 
-    return descriptor;
+        return descriptor;
+    }
 }

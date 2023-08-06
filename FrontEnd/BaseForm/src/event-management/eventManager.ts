@@ -3,7 +3,6 @@ import { EventType } from "../Types/eventTypes";
 import { FormBase } from "../formBase";
 import { LogManager } from "../log-management/logManager";
 
-
 export class EventManager {
 
     static onLoadEvents: Array<(event: Xrm.Events.EventContext) => void> = new Array<(event: Xrm.Events.EventContext) => void>();
