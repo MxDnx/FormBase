@@ -1,11 +1,5 @@
-import { startStop } from "./decorators/startStop";
-import { onLoad } from "./decorators/onLoad";
-import { crmValue } from "./decorators/crmValue";
-import { onChange } from "./decorators/onChange";
-import { EventManager } from "./event-management/eventManager";
-import { initForm } from "./decorators/initForm";
+//import { initForm } from "./decorators/initForm";
 import { crmFormClass, crmFormToInstanciate } from "./decorators/crmFormClass";
-
 
 
 /**
@@ -25,10 +19,6 @@ export class FormBase {
         this.initContextViaDecorator(context);
     }
 
-    /**
-     * Inits form
-     * @param context 
-     */
     @initForm
     initContextViaDecorator(context: Xrm.Events.EventContext) {
         //the context is set via @initForm decorator
@@ -51,4 +41,16 @@ export class FormBase {
 export function initCrmForm(context: Xrm.Events.EventContext) {
     if (crmFormToInstanciate)
         return new crmFormToInstanciate(context);
+}
+
+export function initForm(target: FormBase, propertyKey: string, descriptor: any) {
+
+    const originalMethod = descriptor.value;
+
+    descriptor.value = function (context: Xrm.Events.EventContext) {
+        target.context = context;
+
+    };
+
+    return descriptor;
 }

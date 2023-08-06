@@ -1,4 +1,4 @@
-import { FormBase } from "../formBase";
+/*import { FormBase } from "../formBase";
 
 
 export function initForm(target: FormBase, propertyKey: string, descriptor: PropertyDescriptor) {
@@ -11,4 +11,4 @@ export function initForm(target: FormBase, propertyKey: string, descriptor: Prop
     };
 
     return descriptor;
-}
+}*/
