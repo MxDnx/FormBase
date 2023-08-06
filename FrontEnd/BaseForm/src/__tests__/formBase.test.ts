@@ -1,6 +1,7 @@
-import { FormBase } from "../formBase";
+import { FormBase, initCrmForm } from "../formBase";
 import { XrmMockGenerator } from 'xrm-mock';
 import { onLoad } from "../decorators/onLoad";
+import { crmFormClass } from "../decorators/crmFormClass";
 
 describe('FormBase', () => {
     test('initForm should initiate FormBase.context', () => {
@@ -8,31 +9,31 @@ describe('FormBase', () => {
         const xrmMock = XrmMockGenerator.initialise();
         const eventContext = XrmMockGenerator.getEventContext();
 
-        let formBase = new FormBase();
-        formBase.initForm(eventContext);
+        let formBase = new FormBase(eventContext);
+
         expect(formBase.context).toBeDefined();
     });
 
     test('event "OnLoad" should display Start and Stop info', () => {
-
+        @crmFormClass
         class TestForm extends FormBase {
             appName: string = "TST";
+            e: string = "aa";
 
-            constructor() {
-                super();
+            constructor(context: Xrm.Events.EventContext) {
+                super(context);
             }
             @onLoad
             testOnLoad() {
-
             }
+            l() { }
         }
 
         const xrmMock = XrmMockGenerator.initialise();
         const eventContext = XrmMockGenerator.getEventContext();
+        let testForm: TestForm = initCrmForm(eventContext);
 
-        let formBase = new TestForm();
-        formBase.initForm(eventContext);
-
+        testForm.testOnLoad();
 
     });
 
