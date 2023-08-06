@@ -2,7 +2,7 @@ import { crmValue } from '../../decorators/crmValue';
 import { FormBase } from '../../formBase';
 import { XrmMockGenerator } from 'xrm-mock';
 
-class TestForm extends FormBase {
+class TestCrmValueForm extends FormBase {
 
     @crmValue("mx_test")
     mx_test!: Xrm.Attributes.Attribute<string>;
@@ -22,9 +22,9 @@ describe('crmValue', () => {
         XrmMockGenerator.Attribute.createString("mx_test", testString);
 
 
-        let testForm = new TestForm();
-        testForm.initForm(eventContext);
-        let result = testForm.mx_test.getValue();
+        let testCrmValueForm = new TestCrmValueForm();
+        testCrmValueForm.initForm(eventContext);
+        let result = testCrmValueForm.mx_test.getValue();
 
         expect(result).toEqual(testString);
     });

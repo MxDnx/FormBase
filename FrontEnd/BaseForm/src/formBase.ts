@@ -6,20 +6,21 @@ import { EventManager } from "./event-management/eventManager";
 
 export class FormBase {
 
-    static appName: string = "[BaseForm]";
+    appName: string = "[BaseForm]";
     context!: Xrm.Events.EventContext;
-    private eventManager: EventManager;
+    private localContext!: Xrm.Events.EventContext;
 
     constructor() {
-        this.eventManager = new EventManager();
+
     }
 
-    get FormContext() {
-        return this.context.getFormContext();
+    get formContext() {
+        return this.localContext.getFormContext();
     }
 
-    @onLoad
     public initForm(context: Xrm.Events.EventContext) {
-        this.eventManager.initEvents(context.getFormContext());
+        this.context = context;
+        this.localContext = context;
+        EventManager.initEvents(context.getFormContext());
     }
 }
