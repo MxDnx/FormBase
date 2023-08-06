@@ -3,40 +3,52 @@ import { onLoad } from "./decorators/onLoad";
 import { crmValue } from "./decorators/crmValue";
 import { onChange } from "./decorators/onChange";
 import { EventManager } from "./event-management/eventManager";
+import { initForm } from "./decorators/initForm";
+import { crmFormClass, crmFormToInstanciate } from "./decorators/crmFormClass";
 
+
+
+/**
+ * Form base
+ */
 export class FormBase {
 
-    static appName: string = "[BaseForm]";
-    static context: Xrm.Events.EventContext;
-    private eventManager: EventManager;
-
-    @crmValue("firstname")
-    firstname!: Xrm.Attributes.Attribute<string>;
-    @crmValue("lastname")
-    lastname!: Xrm.Attributes.Attribute<string>;
-
-    constructor() {
-        this.eventManager = new EventManager();
+    appName: string = "[BaseForm]";
+    context!: Xrm.Events.EventContext;
 
 
+    /**
+     * Creates an instance of form base.
+     * @param context 
+     */
+    constructor(context: Xrm.Events.EventContext) {
+        this.initContextViaDecorator(context);
     }
 
-    static get FormContext() {
-        return FormBase.context.getFormContext();
+    /**
+     * Inits form
+     * @param context 
+     */
+    @initForm
+    initContextViaDecorator(context: Xrm.Events.EventContext) {
+        //the context is set via @initForm decorator
+        //it's the only way to be able to use the @crmValue decorator 
     }
 
-    @onLoad
-    public initForm() {
-        this.eventManager.initEvents();
+    /**
+     * Gets form context
+     */
+    get formContext() {
+        return this.context.getFormContext();
     }
-
-    @onChange("lastname")
-    public lastNameOnChange() {
-
-    }
-
-
 }
 
-let b = new FormBase();
-b.initForm();
+/**
+ * Inits crm form
+ * @param context 
+ * @returns  
+ */
+export function initCrmForm(context: Xrm.Events.EventContext) {
+    if (crmFormToInstanciate)
+        return new crmFormToInstanciate(context);
+}

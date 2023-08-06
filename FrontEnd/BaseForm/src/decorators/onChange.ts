@@ -1,29 +1,15 @@
 import { FormBase } from "../formBase";
 import { EventManager } from "../event-management/eventManager";
 import { LogManager } from "../log-management/logManager";
+import { EventType } from "../Types/eventTypes";
 
 export function onChange(attributeName: string) {
 
-    return function (target: any, propertyKey: string, descriptor: PropertyDescriptor) {
+    return function (formBase: any, functionName: string, descriptor: PropertyDescriptor) {
 
-        const originalMethod = descriptor.value;
+        let eventManager: EventManager = new EventManager(formBase);
+        eventManager.addEventDecorator(formBase, functionName, descriptor, EventType.OnChange);
 
-        descriptor.value = function (context: Xrm.Events.EventContext) {
-
-            LogManager.logInfo(`Start OnLoad Event function '${propertyKey}'`);
-
-            if (context === null) {
-                throw Error("Please Provide the context")
-            }
-
-            FormBase.context = context;
-
-            const result = originalMethod.apply(this, context);
-
-            LogManager.logInfo(`End OnLoad Event function '${propertyKey}'`);
-
-            return result;
-        };
         EventManager.onChangeEvents.push({ attributeName: attributeName, callback: descriptor.value });
 
         return descriptor;
