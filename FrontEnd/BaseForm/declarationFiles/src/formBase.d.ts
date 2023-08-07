@@ -9,8 +9,8 @@ export declare class FormBase {
      * Creates an instance of form base.
      * @param context
      */
-    constructor(context: Xrm.Events.EventContext);
-    initContextViaDecorator(context: Xrm.Events.EventContext): void;
+    constructor();
+    initCrmForm(context: Xrm.Events.EventContext): void;
     /**
      * Gets form context
      */
@@ -22,5 +22,5 @@ export declare class FormBase {
  * @returns
  */
 export declare function initCrmForm(context: Xrm.Events.EventContext): any;
-export declare function initForm(target: FormBase, propertyKey: string, descriptor: any): any;
+export declare function initForm(target: FormBase, propertyKey: string, descriptor: PropertyDescriptor): PropertyDescriptor;
 //# sourceMappingURL=formBase.d.ts.map

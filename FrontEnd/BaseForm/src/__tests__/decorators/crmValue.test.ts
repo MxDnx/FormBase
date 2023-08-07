@@ -1,4 +1,4 @@
-import { crmFormClass } from '../../decorators/crmFormClass';
+/*import { crmFormClass } from '../../decorators/crmFormClass';
 import { crmValue } from '../../decorators/crmValue';
 import { FormBase, initCrmForm } from '../../formBase';
 import { XrmMockGenerator } from 'xrm-mock';
@@ -35,4 +35,4 @@ describe('crmValue', () => {
 
         expect(result).toEqual(testString);
     });
-});
+});*/

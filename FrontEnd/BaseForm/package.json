@@ -26,6 +26,7 @@
   "dependencies": {
     "@types/webpack-concat-plugin": "^3.0.3",
     "@types/xrm": "^9.0.73",
-    "types-webpack-bundler": "^1.0.2"
+    "types-webpack-bundler": "^1.0.2",
+    "xrm-mock": "^3.5.9"
   }
 }
