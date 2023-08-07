@@ -23,10 +23,8 @@ export class FormBase {
 
     @initForm
     initCrmForm(context: Xrm.Events.EventContext) {
-        debugger;
         //the context is set via @initForm decorator
         //it's the only way to be able to use the @crmValue decorator
-
     }
 
     /**
@@ -43,12 +41,10 @@ export class FormBase {
  * @returns  
  */
 export function initCrmForm(context: Xrm.Events.EventContext) {
-    debugger;
     if (crmFormToInstanciate)
         return new crmFormToInstanciate(context);
 }
 export function initForm(target: FormBase, propertyKey: string, descriptor: PropertyDescriptor) {
-    debugger;
     const originalMethod = descriptor.value;
 
     descriptor.value = function (context: Xrm.Events.EventContext) {

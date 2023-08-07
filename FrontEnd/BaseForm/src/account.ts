@@ -1,22 +1,22 @@
+import { crmValue } from "./decorators/crmValue";
 import { onChange } from "./decorators/onChange";
 import { onLoad } from "./decorators/onLoad";
 import { FormBase } from "./formBase";
 
 export class AccountForm extends FormBase {
-    constructor() {
 
-        super();
+    @crmValue("name")
+    name!: Xrm.Attributes.Attribute<string>;
 
-
-    }
     @onLoad
     test() {
-        alert("kikoo");
+
     }
 
     @onChange("name")
     ch() {
-        alert("change");
+
+        alert("change " + this.name.getValue());
     }
 }
 

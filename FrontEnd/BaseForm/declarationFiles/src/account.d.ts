@@ -1,6 +1,7 @@
+/// <reference types="xrm" />
 import { FormBase } from "./formBase";
 export declare class AccountForm extends FormBase {
-    constructor();
+    name: Xrm.Attributes.Attribute<string>;
     test(): void;
     ch(): void;
 }
