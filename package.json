@@ -1,5 +1,9 @@
 {
   "devDependencies": {
+    "typescript": "^5.1.6",
     "xrm-mock": "^3.5.9"
+  },
+  "dependencies": {
+    "@types/xrm": "^9.0.73"
   }
 }

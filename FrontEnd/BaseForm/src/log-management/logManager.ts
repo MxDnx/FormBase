@@ -2,6 +2,8 @@ import { EventTime } from "../Types/eventTime";
 import { EventType } from "../Types/eventTypes";
 import { FormBase } from "../formBase";
 
+debugger;
+
 export class LogManager {
     static logInfo(message: string) {
         console.info(message);

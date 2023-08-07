@@ -1,6 +1,6 @@
 import { crmFormClass } from "../src/decorators/crmFormClass";
 import { onLoad } from "../src/decorators/onLoad";
-
+/*
 @crmFormClass
 class kikooForm extends mx.FormBase {
     appName = "kikooForm";
@@ -14,4 +14,4 @@ class kikooForm extends mx.FormBase {
     }
 
 
-}
+}*/
