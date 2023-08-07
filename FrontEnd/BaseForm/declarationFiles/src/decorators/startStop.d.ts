@@ -1,2 +1,2 @@
-export declare function startStop(target: any, propertyKey: string, descriptor: PropertyDescriptor): PropertyDescriptor;
+export {};
 //# sourceMappingURL=startStop.d.ts.map

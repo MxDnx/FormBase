@@ -23,18 +23,16 @@ export class EventManager {
 
         let _this = this;
 
-
-
         descriptor.value = function (...args: any[]) {
 
             _this.logEvent(eventType, EventTime.Start, functionName);
 
-            const result = originalMethod.apply(this, args);
+            const result = originalMethod.apply(formBase, args);
 
             _this.logEvent(eventType, EventTime.Stop, functionName);
 
             return result;
-        };
+        }
     }
 
     private logEvent(eventType: EventType, eventTime: EventTime, functionName: string) {

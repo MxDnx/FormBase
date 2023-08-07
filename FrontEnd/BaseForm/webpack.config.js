@@ -2,36 +2,33 @@ const path = require('path');
 var DeclarationBundlerPlugin = require('types-webpack-bundler');
 
 module.exports = {
-    devtool: 'eval-source-map',
-    entry: './src/formBase.ts',
-    module: {
-        rules: [
-            {
-                test: /\.ts$/,
-                use: 'ts-loader',
-                include: path.resolve(__dirname, 'src'),
-            },
+  devtool: 'eval-source-map',
+  entry: './src/account.ts',
+  module: {
+    rules: [
+      {
+        test: /\.ts$/,
+        use: 'ts-loader',
+        include: path.resolve(__dirname, 'src'),
+      },
 
-        ],
-    },
-    resolve: {
-        extensions: ['.ts', '.js', '.webpack.js', '.web.js', '.js'],
-    },
-    output: {
-        publicPath: 'auto',
-        filename: 'formBase.js',
-        path: path.resolve(__dirname, 'public'),
-    },
-    mode: 'development',
-    plugins: [
-        new DeclarationBundlerPlugin({
-            moduleName: 'mx',
-            out: 'formBase.d.ts',
-        })
-    ]
+    ],
+  },
+  resolve: {
+    extensions: ['.ts', '.js', '.webpack.js', '.web.js', '.js'],
+  },
+  output: {
+    publicPath: 'auto',
+    filename: 'account.js',
+    path: path.resolve(__dirname, 'public'),
+    libraryTarget: 'window',
+    library: 'mx',
+
+  },
+  mode: 'development',
 
 }
-    ;
+  ;
 /*
 module.exports = {
     module: {
