@@ -1,0 +1,14 @@
+{
+    "jestrunner.jestCommand": "npm run test --",
+    "jestrunner.debugOptions": {
+        "runtimeExecutable": "node",
+        "runtimeArgs": [
+            "src//__test__",
+            "${fileBasename}",
+            "--runInBand",
+            "--no-cache",
+            "--watchAll=false",
+            "--color"
+        ]
+    }
+}
