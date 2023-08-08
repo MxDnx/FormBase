@@ -41,8 +41,6 @@ describe('FormBase', () => {
         expect(testForm.context).toBeDefined();
     });
 
-
-
     test('formName should be the name of the class', () => {
         testForm = new TestForm();
         expect(testForm.formName).toEqual("TestForm");
@@ -55,7 +53,6 @@ describe('FormBase', () => {
 
         testForm = new TestForm();
         testForm.testOnLoad(eventContext);
-
 
         expect(logs[0]).toContain(EventType.OnLoad);
         expect(logs[0]).toContain(EventTime.Start);
