@@ -7,11 +7,11 @@ export class LogManager {
         console.info(message);
     }
 
-    static logCallerInfo(callerName: string, message: string) {
-        console.info(`[${callerName}] - ${message}`);
+    static logCaller(callerName: string, message: string) {
+        console.log(`[${callerName}] - ${message}`);
     }
-    static eventLogInfo(formBase: FormBase, eventType: EventType, eventTime: EventTime, functionName: string) {
-        LogManager.logCallerInfo(formBase.appName, ` ${eventType}  ${eventTime} function '${functionName}'`);
+    static logEvent(formBase: FormBase, eventType: EventType, eventTime: EventTime, functionName: string) {
+        LogManager.logCaller(formBase.formName, ` ${eventType}  ${eventTime} function '${functionName}'`);
     }
 }
 

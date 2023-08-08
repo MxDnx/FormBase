@@ -29,14 +29,14 @@ export class EventManager {
 
             const result = originalMethod.apply(formBase, args);
 
-            _this.logEvent(eventType, EventTime.Stop, functionName);
+            _this.logEvent(eventType, EventTime.End, functionName);
 
             return result;
         }
     }
 
     private logEvent(eventType: EventType, eventTime: EventTime, functionName: string) {
-        LogManager.logCallerInfo(this.formBase.appName, ` ${eventType}  ${eventTime} function '${functionName}'`);
+        LogManager.logCaller(this.formBase.formName, ` ${eventType}  ${eventTime} function '${functionName}'`);
     }
 
     static initEvents(formContext: Xrm.FormContext) {

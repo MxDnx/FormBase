@@ -9,7 +9,7 @@ import { EventManager } from "./event-management/eventManager";
  */
 export class FormBase {
 
-    appName: string = "[BaseForm]";
+    formName: string
     context!: Xrm.Events.EventContext;
 
 
@@ -18,11 +18,11 @@ export class FormBase {
      * @param context 
      */
     constructor() {
-
+        this.formName = this.constructor.name;
     }
 
     @initForm
-    initCrmForm(context: Xrm.Events.EventContext) {
+    public initCrmForm(context: Xrm.Events.EventContext) {
         //the context is set via @initForm decorator
         //it's the only way to be able to use the @crmValue decorator
     }

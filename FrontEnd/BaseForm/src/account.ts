@@ -5,6 +5,7 @@ import { FormBase } from "./formBase";
 
 export class AccountForm extends FormBase {
 
+
     @crmValue("name")
     name!: Xrm.Attributes.Attribute<string>;
 

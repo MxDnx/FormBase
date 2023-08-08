@@ -1,7 +1,8 @@
-/*import { crmFormClass } from '../../decorators/crmFormClass';
+import { XrmMockGenerator } from '../../../node_modules/xrm-mock/dist/index';
+import { crmFormClass } from '../../decorators/crmFormClass';
 import { crmValue } from '../../decorators/crmValue';
 import { FormBase, initCrmForm } from '../../formBase';
-import { XrmMockGenerator } from 'xrm-mock';
+
 
 
 
@@ -29,10 +30,10 @@ describe('crmValue', () => {
         XrmMockGenerator.Attribute.createString("mx_test", testString);
 
         let testForm: TestCrmValueForm = new TestCrmValueForm();
-        testForm.initCrmForm(eventContext);
+        testForm.test();
 
         let result = testForm.mx_test.getValue();
 
         expect(result).toEqual(testString);
     });
-});*/
+});

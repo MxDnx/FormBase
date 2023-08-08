@@ -1,40 +1,70 @@
-/*import { FormBase, initCrmForm } from "../formBase";
-import { XrmMockGenerator } from 'xrm-mock';
+import { FormBase, initCrmForm } from "../formBase";
+
 import { onLoad } from "../decorators/onLoad";
 import { crmFormClass } from "../decorators/crmFormClass";
+import { EventContextMock, XrmMockGenerator } from "../../node_modules/xrm-mock/dist/index";
+import { EventType } from "../Types/eventTypes";
+import { EventTime } from "../Types/eventTime";
+
 
 describe('FormBase', () => {
-    test('initForm should initiate FormBase.context', () => {
 
-        const xrmMock = XrmMockGenerator.initialise();
-        const eventContext = XrmMockGenerator.getEventContext();
 
-        let formBase = new FormBase(eventContext);
+    class TestForm extends FormBase {
 
-        expect(formBase.context).toBeDefined();
-    });
-
-    test('event "OnLoad" should display Start and Stop info', () => {
-        @crmFormClass
-        class TestForm extends FormBase {
-            appName: string = "TST";
-            e: string = "aa";
-
-            constructor(context: Xrm.Events.EventContext) {
-                super(context);
-            }
-            @onLoad
-            testOnLoad() {
-            }
-            l() { }
+        constructor() {
+            super();
         }
+        @onLoad
+        testOnLoad(event: Xrm.Events.EventContext) {
+            return true
+        }
+        test() {
 
-        const xrmMock = XrmMockGenerator.initialise();
-        const eventContext = XrmMockGenerator.getEventContext();
-        let testForm: TestForm = initCrmForm(eventContext);
+        }
+    }
 
-        testForm.testOnLoad();
+    var xrmMock;
+    var eventContext: EventContextMock;
+    var testForm: TestForm;
 
+
+    beforeAll(() => {
+        xrmMock = XrmMockGenerator.initialise();
+        eventContext = XrmMockGenerator.getEventContext();
+
+    })
+
+    test('initForm should initiate FormBase.context', () => {
+        testForm = new TestForm();
+        testForm.initCrmForm(eventContext);
+        expect(testForm.context).toBeDefined();
     });
 
-});*/
+
+
+    test('formName should be the name of the class', () => {
+        testForm = new TestForm();
+        expect(testForm.formName).toEqual("TestForm");
+    });
+
+    test('event "OnLoad" should display Start and End log', () => {
+
+        const logs: string[] = [];
+        const logSpy = jest.spyOn(console, "log").mockImplementation(message => logs.push(message));
+
+        testForm = new TestForm();
+        testForm.testOnLoad(eventContext);
+
+
+        expect(logs[0]).toContain(EventType.OnLoad);
+        expect(logs[0]).toContain(EventTime.Start);
+        expect(logs[0]).toContain(testForm.testOnLoad.name);
+
+        expect(logs[1]).toContain(EventType.OnLoad);
+        expect(logs[1]).toContain(EventTime.End);
+        expect(logs[1]).toContain(testForm.testOnLoad.name);
+
+        logSpy.mockRestore();
+    });
+});
