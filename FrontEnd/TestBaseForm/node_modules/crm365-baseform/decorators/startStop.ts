@@ -1,21 +1,23 @@
+import { EventTime } from "../Types/eventTime";
+import { EventType } from "../Types/eventTypes";
+import { EventManager } from "../event-management/eventManager";
+import { FormBase } from "../formBase";
 import { LogManager } from "../log-management/logManager";
 
-module mx {
-    export function startStop(target: any, propertyKey: string, descriptor: PropertyDescriptor) {
 
-        const originalMethod = descriptor.value;
+export function startStop(caller: any, functionName: string, descriptor: PropertyDescriptor) {
 
-        descriptor.value = function (...args: any[]) {
+    const originalMethod = descriptor.value;
 
-            LogManager.logInfo(`Start function '${propertyKey}'`);
 
-            const result = originalMethod.apply(this, args);
 
-            LogManager.logInfo(`End function '${propertyKey}'`);
+    descriptor.value = function (...args: any[]) {
+        LogManager.logCaller(caller.constructor.name, `${EventTime.Start} function '${functionName}'`);
 
-            return result;
-        };
+        const result = originalMethod.apply(caller, args);
 
-        return descriptor;
+        LogManager.logCaller(caller.constructor.name, `${EventTime.End} function '${functionName}'`);
+
+        return result;
     }
 }

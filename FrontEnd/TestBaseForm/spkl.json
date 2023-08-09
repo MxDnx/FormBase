@@ -1,0 +1,14 @@
+{
+    "webresources": [
+        {
+            "profile": "default,debug",
+            "files": [
+                {
+                    "uniquename": "mxDnx_/account.js",
+                    "file": "forms\\account\\accountForm.js",
+                    "description": ""
+                }
+            ]
+        }
+    ]
+}

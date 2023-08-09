@@ -1,15 +1,10 @@
 import { XrmMockGenerator } from '../../node_modules/xrm-mock/dist/index';
-import { crmFormClass } from '../../src/decorators/crmFormClass';
 import { crmValue } from '../../src/decorators/crmValue';
-import { FormBase, initCrmForm } from '../../src/formBase';
-
-
-
+import { FormBase, } from '../../src/formBase';
 
 describe('crmValue', () => {
     test('initForm should initiate FormBase.context', () => {
 
-        @crmFormClass
         class TestCrmValueForm extends FormBase {
             appName = "mxtest";
             @crmValue("mx_test")

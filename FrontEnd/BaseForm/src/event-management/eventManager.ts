@@ -12,8 +12,6 @@ export class EventManager {
 
     formBase: FormBase;
 
-
-
     constructor(formBase: FormBase) {
         this.formBase = formBase;
     }
@@ -36,7 +34,7 @@ export class EventManager {
     }
 
     private logEvent(eventType: EventType, eventTime: EventTime, functionName: string) {
-        LogManager.logCaller(this.formBase.formName, ` ${eventType}  ${eventTime} function '${functionName}'`);
+        LogManager.logCaller(this.formBase.constructor.name, `${eventTime} ${eventType} Event - function: '${functionName}'`);
     }
 
     static initEvents(formContext: Xrm.FormContext) {

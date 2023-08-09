@@ -11,7 +11,7 @@ export class LogManager {
         console.log(`[${callerName}] - ${message}`);
     }
     static logEvent(formBase: FormBase, eventType: EventType, eventTime: EventTime, functionName: string) {
-        LogManager.logCaller(formBase.formName, ` ${eventType}  ${eventTime} function '${functionName}'`);
+        LogManager.logCaller(formBase.constructor.name, ` ${eventType}  ${eventTime} function '${functionName}'`);
     }
 }
 

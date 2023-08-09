@@ -1,7 +1,5 @@
 import { FormBase } from "../src/formBase";
-
 import { onLoad } from "../src/decorators/onLoad";
-import { crmFormClass } from "../src/decorators/crmFormClass";
 import { EventContextMock, XrmMockGenerator } from "../node_modules/xrm-mock/dist/index";
 import { EventType } from "../src/Types/eventTypes";
 import { EventTime } from "../src/Types/eventTime";

@@ -5,7 +5,7 @@ import { EventType } from "../Types/eventTypes";
 
 export function onChange(attributeName: string) {
 
-    return function (target: any, propertyKey: string, descriptor: PropertyDescriptor) {
+    return function (target: FormBase, propertyKey: string, descriptor: PropertyDescriptor) {
 
         let eventManager: EventManager = new EventManager(target);
         eventManager.addEventDecorator(target, propertyKey, descriptor, EventType.OnChange);
