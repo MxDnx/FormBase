@@ -94,3 +94,11 @@
 10:54:22	Publish complete.
 10:54:22	Processed 1 section(s)
 10:54:22	Processed 1 config(s)
+11:16:43	Deploying WebResources
+11:16:44	Using Config 'C:\Users\maxim\Project\CRM\TestBaseForm'
+11:16:44	mxDnx_/account.js has not changed, skipping...
+11:16:44	Deployed 0 webresource(s)
+11:16:44	Publishing 0 webresources...
+11:16:44	Publish complete.
+11:16:44	Processed 1 section(s)
+11:16:44	Processed 1 config(s)
