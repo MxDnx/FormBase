@@ -3,7 +3,6 @@ var DeclarationBundlerPlugin = require('types-webpack-bundler');
 
 module.exports = {
   devtool: 'eval-source-map',
-  entry: './src/account.ts',
   module: {
     rules: [
       {
