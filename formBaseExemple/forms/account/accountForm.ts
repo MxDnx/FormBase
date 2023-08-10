@@ -11,21 +11,19 @@ export class AccountForm extends FormBase {
     @crmValue("name")
     name!: Xrm.Attributes.Attribute<string>;
 
-    @onLoad
-    coucou() {
-        alert("OnLoad");
-        this.testStartStop();
+    @onLoad //--> will be automatically added to the onLoadEvent
+    onLoad() {
+        
     }
 
     @startStop
-    testStartStop() {
+    basicFunction() {
         alert("StartStop");
     }
 
     @onChange("name")
-    xxx() {
+    onChangeName() {
 
-        alert("change " + this.name.getValue());
     }
 }
 

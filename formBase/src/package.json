@@ -1,5 +1,5 @@
 {
-  "name": "crm365-baseform",
+  "name": "crm365-formBase",
   "version": "1.0.0",
   "description": "The baseForm class is designed for extending CRM Dynamics 365 forms, providing enhanced capabilities for customization and manipulation. By utilizing this class, developers can efficiently extend and modify CRM forms, offering an essential toolkit for seamless integration of tailored functionalities into the CRM 365 form ecosystem.",
   "main": "baseForm.ts",
