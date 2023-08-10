@@ -27,8 +27,8 @@
     //"moduleResolution": "NodeNext", /* Specify how TypeScript looks up a file from a given module specifier. */
     // "baseUrl": "./",                                  /* Specify the base directory to resolve non-relative module names. */
     "paths": {
-      "crm365-baseform/*": [
-        "node_modules/crm365-baseform/*"
+      "crm365-formbase/*": [
+        "node_modules/crm365-formbase/*"
       ]
     },
     "baseUrl": ".",

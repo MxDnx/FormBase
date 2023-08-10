@@ -102,3 +102,11 @@
 11:16:44	Publish complete.
 11:16:44	Processed 1 section(s)
 11:16:44	Processed 1 config(s)
+13:05:05	Deploying WebResources
+13:05:06	Using Config 'C:\Users\maxim\Project\CRM\formBaseExemple'
+13:05:06	Updating Webresource 'forms\account\accountForm.js' -> 'mxDnx_/account.js'
+13:05:14	Deployed 1 webresource(s)
+13:05:14	Publishing 1 webresources...
+13:05:23	Publish complete.
+13:05:23	Processed 1 section(s)
+13:05:23	Processed 1 config(s)

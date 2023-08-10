@@ -1,5 +1,5 @@
 import { EventManager } from "../event-management/eventManager";
-import { FormBase } from "../formBase";
+import { FormBase } from "crm365-formbase/formBase";
 
 export function initForm(formBase: FormBase, propertyKey: string, descriptor: PropertyDescriptor) {
     const originalMethod = descriptor.value;

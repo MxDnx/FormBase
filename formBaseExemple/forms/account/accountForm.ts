@@ -1,8 +1,8 @@
-import { crmValue } from "crm365-baseform/decorators/crmValue"
-import { onLoad } from "crm365-baseform/decorators/onLoad";
-import { onChange } from "crm365-baseform/decorators/onChange"
-import { startStop } from "crm365-baseform/decorators/startStop"
-import { FormBase } from "crm365-baseform//formBase";
+import { crmValue } from "crm365-formbase/decorators/crmValue"
+import { onLoad } from "crm365-formbase/decorators/onLoad";
+import { onChange } from "crm365-formbase/decorators/onChange"
+import { startStop } from "crm365-formbase/decorators/startStop"
+import { FormBase } from "crm365-formbase/formBase";
 
 
 export class AccountForm extends FormBase {
@@ -13,7 +13,7 @@ export class AccountForm extends FormBase {
 
     @onLoad //--> will be automatically added to the onLoadEvent
     onLoad() {
-        
+
     }
 
     @startStop
