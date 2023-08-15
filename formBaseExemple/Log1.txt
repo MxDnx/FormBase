@@ -110,3 +110,51 @@
 13:05:23	Publish complete.
 13:05:23	Processed 1 section(s)
 13:05:23	Processed 1 config(s)
+09:32:44	Deploying WebResources
+09:32:44	Using Config 'C:\Users\maxim\Project\CRM\formBaseExemple'
+09:32:44	mxDnx_/account.js has not changed, skipping...
+09:32:44	Deployed 0 webresource(s)
+09:32:44	Publishing 0 webresources...
+09:32:44	Publish complete.
+09:32:44	Processed 1 section(s)
+09:32:44	Processed 1 config(s)
+09:37:06	Deploying WebResources
+09:37:07	Using Config 'C:\Users\maxim\Project\CRM\formBaseExemple'
+09:37:07	Updating Webresource 'forms\account\accountForm.js' -> 'mxDnx_/account.js'
+09:37:13	Deployed 1 webresource(s)
+09:37:13	Publishing 1 webresources...
+09:37:23	Publish complete.
+09:37:23	Processed 1 section(s)
+09:37:23	Processed 1 config(s)
+09:52:48	Deploying WebResources
+09:52:48	Using Config 'C:\Users\maxim\Project\CRM\formBaseExemple'
+09:52:48	Updating Webresource 'forms\account\accountForm.js' -> 'mxDnx_/account.js'
+09:52:50	Deployed 1 webresource(s)
+09:52:50	Publishing 1 webresources...
+09:52:54	Publish complete.
+09:52:54	Processed 1 section(s)
+09:52:54	Processed 1 config(s)
+09:56:46	Deploying WebResources
+09:56:46	Using Config 'C:\Users\maxim\Project\CRM\formBaseExemple'
+09:56:46	Updating Webresource 'forms\account\accountForm.js' -> 'mxDnx_/account.js'
+09:56:47	Deployed 1 webresource(s)
+09:56:47	Publishing 1 webresources...
+09:56:49	Publish complete.
+09:56:49	Processed 1 section(s)
+09:56:49	Processed 1 config(s)
+10:03:57	Deploying WebResources
+10:03:57	Using Config 'C:\Users\maxim\Project\CRM\formBaseExemple'
+10:03:57	Updating Webresource 'forms\account\accountForm.js' -> 'mxDnx_/account.js'
+10:03:58	Deployed 1 webresource(s)
+10:03:58	Publishing 1 webresources...
+10:04:01	Publish complete.
+10:04:01	Processed 1 section(s)
+10:04:01	Processed 1 config(s)
+10:06:06	Deploying WebResources
+10:06:06	Using Config 'C:\Users\maxim\Project\CRM\formBaseExemple'
+10:06:06	Updating Webresource 'forms\account\accountForm.js' -> 'mxDnx_/account.js'
+10:06:07	Deployed 1 webresource(s)
+10:06:07	Publishing 1 webresources...
+10:06:10	Publish complete.
+10:06:10	Processed 1 section(s)
+10:06:10	Processed 1 config(s)

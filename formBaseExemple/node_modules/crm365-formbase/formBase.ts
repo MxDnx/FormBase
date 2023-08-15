@@ -1,4 +1,5 @@
 import { initForm } from "./decorators/initForm";
+import { crmFormClass, crmFormInstance, initCrmForm } from "./decorators/crmFormClass";
 
 /**
  * Form base
@@ -33,5 +34,3 @@ export class FormBase {
         return this.constructor.name;
     }
 }
-
-

@@ -25,7 +25,7 @@ module.exports = (env) => {
       filename: env.output,
       path: path.resolve(__dirname),
       libraryTarget: 'window',
-      library: 'mxDnx',
+
 
     },
     mode: 'development',
