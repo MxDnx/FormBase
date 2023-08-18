@@ -29,8 +29,10 @@ export class AccountForm extends FormBase {
     name!: Xrm.Attributes.Attribute<string>;
 
     @onLoad //=> Trigger when the form is loading
-    onLoad() {
-
+    onLoad1() {
+    }
+    @onLoad //=> Trigger when the form is loading
+    onLoad1() {
     }
 
     @startStop // Add Start and stop in the console.log
@@ -46,4 +48,4 @@ export class AccountForm extends FormBase {
 }
 
 
--In the CRM Form Configuration, create an onload event and type the functyion: "initCrmForm". Nothing more
+-In the CRM Form Configuration, create an onload event and type the function: "initCrmForm". Nothing more
