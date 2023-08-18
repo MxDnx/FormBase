@@ -6,21 +6,19 @@ import { crmFormClass, crmFormInstance, initCrmForm } from "./decorators/crmForm
  */
 export class FormBase {
 
-
+    /**
+     * Context of the CRM form.
+     */
     context!: Xrm.Events.EventContext;
 
-    /**
-     * Creates an instance of form base.
-     * @param context 
-     */
     constructor() {
 
     }
 
     @initForm
     public initCrmForm(context: Xrm.Events.EventContext) {
-        //the context is set via @initForm decorator
-        //it's the only way to be able to use the @crmValue decorator
+        //The context is set via @initForm decorator
+        //It's the only way to be able to use the @crmValue access the decorator.
     }
 
     /**

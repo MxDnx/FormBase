@@ -2,7 +2,8 @@ Other technology needed to make it work:
 
 - webpack:https://webpack.js.org/
 - sparkl http://www.sparklexrm.com/s/default.html
-(check the BaseFormExample project 
+
+check the BaseFormExample project 
 
 How to:
 - create a typescript project
@@ -10,7 +11,7 @@ How to:
 - ..
 
 
-
+@
 export class AccountForm extends FormBase {
 
 
