@@ -46,4 +46,4 @@ export class AccountForm extends FormBase {
 }
 ```
 
--In the CRM Form Configuration, create an onload event and type the function: "initCrmForm". Nothing more
+- In the CRM Form Configuration, create an onload event and type the function: "initCrmForm". Nothing more
