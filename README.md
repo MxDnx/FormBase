@@ -20,7 +20,7 @@ What I did:
     - create webpack bundle for each file you want to upload to CRM.
     - call webresource.bat to send the file to CRM  
 
-
+```Typescript
 @crmFormClass //instantiate an object of the class.
 export class AccountForm extends FormBase {
 
@@ -28,12 +28,10 @@ export class AccountForm extends FormBase {
     @crmValue("name") // equivalent: context.formContext.getAttribute<any>("name");
     name!: Xrm.Attributes.Attribute<string>;
 
-    @onLoad //=> Trigger when the form is loading
-    onLoad1() {
+    @onLoad //=> Trigger when the form is loading (you can have several onload event
+    onLoad() {
     }
-    @onLoad //=> Trigger when the form is loading
-    onLoad1() {
-    }
+
 
     @startStop // Add Start and stop in the console.log
     basicFunction() {
@@ -46,6 +44,6 @@ export class AccountForm extends FormBase {
     }
 
 }
-
+```
 
 -In the CRM Form Configuration, create an onload event and type the function: "initCrmForm". Nothing more
